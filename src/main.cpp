@@ -29,9 +29,9 @@ int main(int argc, char **argv)
         cout << "Enter File name to load data from. ( music | movies ) :\n";
         cin >> filename;
         // cerr --> standard error stream
-        cerr << "Loading ...\n";
+        cerr << "Loading...\n";
         data = get_array_from_file("../assets/" + filename + ".txt");
-        cerr << "Done.\n";
+        cerr << "Done\n";
     }
 
     // example data : data = {"Hello, World!", "This is a test file.", "It contains multiple lines."}
@@ -57,10 +57,10 @@ int main(int argc, char **argv)
     {
         cout << "------------------------\n";
         cout << "MENU\n";
-        cout << "1. Exact Search.\n";
-        cout << "2. Prefix Search.\n";
-        cout << "3. Universal Search.\n";
-        cout << "0. Exit.\n";
+        cout << "1. Exact Search\n";
+        cout << "2. Prefix Search\n";
+        cout << "3. Universal Search\n";
+        cout << "0. Exit\n";
 
         cin >> choice;
         // After cin >> choice;, there might be a leftover newline character ('\n') in the input buffer because pressing Enter after entering the value for choice generates this newline character. getchar(); is used to read and discard this leftover newline character ensuring that the input buffer is clean for the next input operation.
@@ -104,7 +104,7 @@ int main(int argc, char **argv)
             break;
         }
 
-        cout << "\n\npress any key to continue.";
+        cout << "\n\nPress any key to continue";
         getchar();
         system("cls");
 

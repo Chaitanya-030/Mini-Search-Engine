@@ -146,9 +146,9 @@ bool Trie::_remove(TrieNode *current, string str, int index)
         // End of the word ?
         if (!current->isEndOfWord)
         {
-            return false; // word don't exist.
+            return false; // word doesn't exist.
         }
-        current->isEndOfWord = false;
+        current->isEndOfWord = false; // making it false indirectly removes the str
 
         // if no more children
         return current->children.size() == 0; // true?
@@ -158,7 +158,7 @@ bool Trie::_remove(TrieNode *current, string str, int index)
 
     if (!current->children[ch])
     {
-        return false; // word don't exist.
+        return false; // word doesn't exist.
     }
 
     bool shouldDeleteCurrentNode = _remove(current->children[ch], str, index + 1);
@@ -171,24 +171,4 @@ bool Trie::_remove(TrieNode *current, string str, int index)
     }
 
     return false;
-}
-
-void Trie::draw(TrieNode *current, int depth = 0)
-{
-    if (!current)
-    {
-        current = root;
-    }
-
-    for (auto ch : current->children)
-    {
-        for (int i = 0; i < depth; i++)
-        {
-            cout << "_ ";
-        }
-
-        cout << ch.first << "\n";
-
-        draw(ch.second, depth + 1);
-    }
 }

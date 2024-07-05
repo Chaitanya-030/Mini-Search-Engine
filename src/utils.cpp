@@ -11,7 +11,7 @@ vector<string> get_array_from_file(string src)
 
     if (!file)
     {
-        cerr << "\nCan't Open the File " << src << "Some Error Occurred...!\n";
+        cerr << "\nCan't Open the File " << src << "Some error occurred...!\n";
         return words;
     }
 
