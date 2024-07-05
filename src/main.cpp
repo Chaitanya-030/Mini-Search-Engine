@@ -26,12 +26,12 @@ int main(int argc, char **argv)
     // if file if not present in command line input, then take it as an input from the user
     else
     {
-        cout << "Enter File name to load data from. ( music | movies ) :\n";
+        cout << "Enter File name to load data from. ( music | movies ) : ";
         cin >> filename;
         // cerr --> standard error stream
         cerr << "Loading...\n";
         data = get_array_from_file("../assets/" + filename + ".txt");
-        cerr << "Done\n";
+        cerr << "Done\n\n";
     }
 
     // example data : data = {"Hello, World!", "This is a test file.", "It contains multiple lines."}
@@ -55,8 +55,7 @@ int main(int argc, char **argv)
 
     do
     {
-        cout << "------------------------\n";
-        cout << "MENU\n";
+        cout << "<------------------------MENU------------------------>\n";
         cout << "1. Exact Search\n";
         cout << "2. Prefix Search\n";
         cout << "3. Universal Search\n";
